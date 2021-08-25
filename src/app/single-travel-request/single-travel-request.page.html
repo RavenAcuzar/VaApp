@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Travel Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item text-wrap class="transparent-item main-title" lines="none">
+    <p>{{ details.Name }}</p>
+  </ion-item>
+  <ion-item-divider class="transparent-item">
+  </ion-item-divider>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-button class="default-element-color button-fill-space">
+          Destination
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" class="row-emphasis">
+        &nbsp;&nbsp;&nbsp;{{ details.Destination }}
+      </ion-col>
+    </ion-row>
+    <br />
+    <ion-row>
+      <ion-col size="5">
+        <ion-button class="default-element-color button-fill-space">
+          From
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" class="row-emphasis">
+        &nbsp;&nbsp;&nbsp;{{ details.StartDate }}
+      </ion-col>
+    </ion-row>
+    <br />
+    <ion-row>
+      <ion-col size="5">
+        <ion-button class="default-element-color button-fill-space">
+          To
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" class="row-emphasis">
+        &nbsp;&nbsp;&nbsp;{{ details.EndDate }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-item text-wrap class="transparent-item row-emphasis">
+        Destination: {{ details.Destination }}
+      </ion-item>
+      <br />
+      <ion-item text-wrap class="transparent-item row-emphasis">
+        From: {{ details.StartDate }}
+      </ion-item>
+      <br />
+      <ion-item text-wrap class="transparent-item row-emphasis">
+        To: {{ details.EndDate }}
+      </ion-item> -->
+  <ion-list lines="none">
+    <ion-item-divider class="transparent-item">
+    </ion-item-divider>
+    <ion-item text-wrap class="transparent-item">
+      Purpose: {{ details.Purpose }}
+    </ion-item>
+    <ion-item text-wrap class="transparent-item">
+      Remarks: {{ details.Remarks }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<app-footer-tab></app-footer-tab>

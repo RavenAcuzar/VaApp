@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar" [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < Tally Votes </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label>Year: </ion-label>
+
+      <ion-select [(ngModel)]="selectedYear" (ionChange)="yearSelected()">
+        <ion-select-option *ngFor="let item of yearList" value="{{item.value}}">{{item.text}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Month: </ion-label>
+
+      <ion-select [(ngModel)]="selectedMonth" *ngIf="enableMonth" (ionChange)="monthSelected()">
+        <ion-select-option *ngFor="let item of monthList" value="{{item.value}}">{{item.text}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-button *ngIf="selectedMonth" expand="full" id="btnGetVotes" class="default-element-color"
+        (click)="listVotes()">
+        List Votes
+      </ion-button>
+
+      <ion-button *ngIf="selectedMonth" expand="full" id="btnGetVotes" class="default-element-color"
+        (click)="generatePDF()">
+        Export PDF
+      </ion-button>
+    </ion-item>
+  </div>
+
+
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

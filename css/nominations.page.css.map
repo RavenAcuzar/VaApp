@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/nominations/nominations.page.scss"
+    ],
+    "names": [],
+    "file": "nominations.page.css"
+}

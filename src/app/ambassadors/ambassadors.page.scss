@@ -1,0 +1,31 @@
+ion-button {
+  --background: #40556e;
+  width: 100%;
+}
+ion-row{
+  color: #12244F !important;
+}
+.ambassador-title {
+  text-align: center;
+  font-weight: 800;
+  color: #12244F;
+  font-size: 25px;
+}
+.description{
+  color: #12244F;
+  padding: 0 30px;
+  h3{
+    text-align: center;
+    font-weight: bold;
+  }
+}
+.img-btn {
+  width: 100%;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.5);
+}
+button{
+    background: transparent !important;
+}

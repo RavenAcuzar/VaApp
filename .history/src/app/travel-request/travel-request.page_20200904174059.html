@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Travel Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="vert-middle" *ngFor="let req of requests" (click)="viewRequest(req)">
+      <p class="default-text bigger-text">{{ req.Name }}</p>
+      <ion-button class="default-element-color set-to-right">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer-tab></app-footer-tab>

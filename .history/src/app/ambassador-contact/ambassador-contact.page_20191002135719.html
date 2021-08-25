@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="brighter-text">{{ content.Name }}</ion-title>
+    <ion-buttons *ngIf="isSuperuser" style="background: transparent !important" slot="end">
+      <ion-button (click)="edit()">
+        Edit
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="gradient-background">
+  <ion-card>
+    <img [src]="content.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+  </ion-card>
+  <div>
+    <p class="brighter-text">Position: {{ content.Position }}</p>
+    <p class="brighter-text" [hidden]="noUser">IR ID: {{ content.IRID }}</p>
+    <p class="brighter-text" [hidden]="noUser">Email: {{ content.Email }}</p>
+    <p class="brighter-text" [hidden]="noUser">Contact Number: {{ content.Contact }}</p>
+  </div>
+</ion-content>

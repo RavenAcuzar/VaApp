@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let data of notifs" (click)="viewNotif(data)">
+    <img [src]="data.ImageLink">
+    <ion-card-header text-wrap>
+      <b>{{ data.localTitle }}</b>
+    </ion-card-header>
+    <ion-card-content text-wrap>
+      {{ data.Summary }}
+      <br />
+      <br />
+      <ion-grid>
+        <ion-row>
+          <ion-col size="7">
+            <ion-icon name="eye"></ion-icon> Hits: {{ data.Hits }}
+          </ion-col>
+          <ion-col size="5">
+            {{ this.timeDiff(data.CreatedOn) }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

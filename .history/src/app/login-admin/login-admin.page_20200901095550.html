@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons end>
+          <img style="padding-left: 20px;" src="assets/imgs/search.png">
+      </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<br /> <br /> <br /> <br />
+<ion-content class="login">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list no-lines style="padding:40px;">
+          <ion-label style="color:#13254E; padding-left: 15px;">
+            <strong>Admin Login</strong>
+          </ion-label>
+          <ion-item class="white-background" >
+            <ion-input [(ngModel)]="txtUser" style="padding-left: 0px;" placeholder="Username" [ngModelOptions]="{standalone: true}" type="email"
+              required autofocus></ion-input>
+          </ion-item>
+          <br />
+          <ion-item class="white-background" style="padding-left: 0px;">
+            <ion-input [(ngModel)]="pbxPass" style="padding-left: 0px;" placeholder="Password" [ngModelOptions]="{standalone: true}"
+              type="password" required></ion-input>
+          </ion-item>
+          <br />
+          <ion-button expand="full" icon-start id="btnLogin" class="default-element-color" (click)="logIn()">
+            Log in
+          </ion-button>
+          <ion-button expand="full" icon-start id="btnLogin" class="default-element-color" (click)="logIn()">
+            Forgot Password
+          </ion-button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text">
+        &nbsp; &nbsp; < Nominations </p>
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list line="none">
+    <ion-item *ngFor="let person of nominees" class="transparent-item" (click)="viewProfile(person)" text-wrap>
+      <ion-thumbnail slot="start">
+        <img [src]="person.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+      </ion-thumbnail>
+      <p class="default-text">{{ person.Name }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<app-footer-tab></app-footer-tab>

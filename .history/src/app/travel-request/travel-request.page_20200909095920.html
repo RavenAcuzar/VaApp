@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar"  [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < Travel Requests </ion-toolbar> </ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="vert-middle" *ngFor="let req of requests" (click)="viewRequest(req)">
+      <p class="default-text bigger-text">{{ req.Name }}</p>
+      <ion-button class="default-element-color set-to-right">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="requests.length == 0" style="position: absolute; top: 40%; left: 30%;">
+      <p>Empty Travel History</p>
+  </div>
+</ion-content>
+<app-footer-tab></app-footer-tab>

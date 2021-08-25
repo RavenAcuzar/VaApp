@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+      <ion-buttons end>
+          <img style="padding-left: 20px;" src="assets/imgs/search.png">
+      </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar" [routerLink]="['/ambassadors']" routerDiraction="back">
+    &nbsp; &nbsp; < V Partners </ion-toolbar> </ion-header> <ion-content>
+      <ion-grid>
+        <ion-row *ngFor="let a of vps">
+          <ion-col>
+            <ion-card class="partner-card" [routerLink]="['/ambassador-profile'" routerDIrection="forward">
+              <ion-row>
+                <ion-col>
+                  <ion-card-header>
+                    <ion-card-title class="card--title" style="color:white;">{{a.name}}</ion-card-title>
+                    <ion-card-subtitle class="card--subtitle" style="color:#E3D4B9; margin-top: 0px;">{{a.Position}}</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-col>
+                <ion-col style="
+                padding-right: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+            ">
+                  <img [src]="a.Image" style="height:100%" />
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-content>
+<app-footer-tab></app-footer-tab>

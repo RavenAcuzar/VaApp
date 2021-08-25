@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons slot="end" [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-right: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  " [routerLink]="['/ambassadors']" routerDiraction="back">
+    &nbsp; &nbsp; < V Council </ion-toolbar> 
+  </ion-header> 
+    <ion-content>
+      <div *ngIf="hasAccount">
+        <ion-card style="height: 72; background: #D9E7F3; margin-right: 0px;
+        margin-left: 0px;" class="" *ngFor="let a of vcs" (click)="moveToLanding(a)">
+        <ion-row>
+          <ion-col size="5" class=""
+            style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 50px;">
+            <img [src]="a.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)" style="width:100px;" />
+          </ion-col>
+          <ion-col>
+            <ion-card-header>
+              <ion-card-title>{{a.Name}}</ion-card-title>
+              <ion-card-subtitle style="margin-top: 0px;">V Council</ion-card-subtitle>
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      </div>
+
+      <div *ngIf="!hasAccount" class="desc">
+        <img src="assets/imgs/vc-icon.png">
+        <h3>V Council</h3>
+        <p>V Council members operate on the ground and specialize in a specific country, and serve as country leaders.</p>
+        <p>They work closely with the Independent Representatives in person, building the relationships and personal connections that make our global network so strong.They support the network through medium- and small-scale trainings as well as giving the corporate side invaluable feedback and reports on market climate.</p>
+      </div>
+      
+      </ion-content>
+<app-footer-tab></app-footer-tab>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text"> Nominations </p>
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-button *ngFor="let cat of category" expand="block" class="default-element-color" style="color: white"
+    (click)="selectedCategory(cat)">
+    {{ cat.name }}
+  </ion-button> -->
+
+  <ion-grid style="padding-left: 30px;">
+    <ion-row>
+      <ion-col (click)="selectedCategory('AVPS')">
+        <ion-row><img src="assets/imgs/avp-icon.png"></ion-row>
+        <ion-row><strong>Associate <br>V Partners</strong></ion-row>
+      </ion-col>
+      <ion-col (click)="selectedCategory(VCS)">
+        <ion-row><img src="assets/imgs/vc-icon.png"></ion-row>
+        <ion-row><strong>V Council</strong></ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

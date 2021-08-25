@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,aAAa,EAAE,iBAAiB;CACnC",
+    "sources": [
+        "../src/app/nomination-profile/nomination-profile.page.scss"
+    ],
+    "names": [],
+    "file": "nomination-profile.page.css"
+}

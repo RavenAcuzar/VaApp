@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Select Tool </p>
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="toolType == 'career'">
+    <img src='../../assets/tools/1.jpg'>
+    <img src='../../assets/tools/2.jpg'>
+    <img src='../../assets/tools/3.jpg'>
+    <img src='../../assets/tools/4.jpg'>
+    <img src='../../assets/tools/4-5.jpg'>
+    <img src='../../assets/tools/5.jpg'>
+    <img src='../../assets/tools/6.jpg'>
+    <img src='../../assets/tools/7.jpg'>
+
+
+  </div>
+
+  <div *ngIf="toolType == 'roles'" style="padding: 20px; text-align: left; position: absolute;">
+    <img src='../../assets/tools/8.jpg'>
+    <img src='../../assets/tools/9.jpg'>
+    <img src='../../assets/tools/10.jpg'>
+    <img src='../../assets/tools/11.jpg'>
+
+
+  </div>
+
+  <div *ngIf="toolType == 'guidelines'">
+    <h2 style="text-align: center;">MDF GUIDELINES</h2>
+    <h2 style="text-align: center;">(Market Development Fund)</h2>
+
+
+    <img src='../../assets/tools/12.jpg'>
+    <img src='../../assets/tools/13.jpg'>
+    <img src='../../assets/tools/14.jpg'>
+    <img src='../../assets/tools/15.jpg'>
+    <img src='../../assets/tools/16.jpg'>
+
+  </div>
+
+  <div *ngIf="toolType == 'conduct'" style="position: absolute">
+    <img src='../../assets/tools/17.jpg'>
+    <img src='../../assets/tools/18.jpg'>
+    <img src='../../assets/tools/19.jpg'>
+  </div>
+
+  <div *ngIf="toolType == 'network'" style="position: absolute">
+    <img src='../../assets/tools/20.jpg'>
+    <img src='../../assets/tools/21.jpg'>
+    <img src='../../assets/tools/22.jpg'>
+    <img src='../../assets/tools/23.jpg'>
+    <img src='../../assets/tools/24.jpg'>
+    <img src='../../assets/tools/25.jpg'>
+    <img src='../../assets/tools/26.jpg'>
+    <img src='../../assets/tools/27.jpg'>
+  </div>
+
+
+
+</ion-content>

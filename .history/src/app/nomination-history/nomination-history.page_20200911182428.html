@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Nomination History </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="login">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list no-lines style="padding:40px;">
+          <ion-label style="color:#13254E; padding-left: 15px;">
+            <strong> </strong>
+          </ion-label>
+          <ion-item class="white-background">
+            <ion-label>Year</ion-label>
+            <ion-select placeholder="">
+              <ion-select-option value="f">2019</ion-select-option>
+              <ion-select-option value="m">2020</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="white-background">
+            <ion-label>Month</ion-label>
+            <ion-select placeholder="">
+              <ion-select-option value="f">January</ion-select-option>
+              <ion-select-option value="m">February</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br />
+          <ion-button expand="full" icon-start id="btnLogin" class="default-element-color" (click)="logIn()">
+            Go
+          </ion-button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer-tab></app-footer-tab>

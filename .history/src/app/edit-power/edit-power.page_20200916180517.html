@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar">
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Edit Profile </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list no-lines>
+    <form>
+      <ion-item class="default-text">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input required type="text" [(ngModel)]="profile.Name" [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+      <ion-item class="default-text">
+        <ion-label position="floating">Position</ion-label>
+        <ion-input required type="text" [(ngModel)]="profile.CompanyTitle" [ngModelOptions]="{standalone: true}"
+          [disabled]="!disablePosition"></ion-input>
+      </ion-item>
+      <ion-item class="default-text">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input required type="text" [(ngModel)]="profile.Email" [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+      <ion-item class="default-text">
+        <ion-label position="floating">Contact Number</ion-label>
+        <ion-input required type="text" [(ngModel)]="profile.Contact" [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+      <br />
+      <ion-button class="default-element-color" expand="block" type="submit" (click)="beforeSaving()">
+        Save
+      </ion-button>
+    </form>
+    <br />
+    <ion-button class="default-element-color" expand="block" (click)="changePass()">
+      Change Password
+    </ion-button>
+  </ion-list>
+
+</ion-content>
+
+<app-footer-tab></app-footer-tab>

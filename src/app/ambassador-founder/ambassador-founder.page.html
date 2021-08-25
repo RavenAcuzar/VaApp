@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+      <ion-buttons end [routerLink]="['/search-page']"
+    routerDirection='forward'>
+          <img style="padding-left: 20px;" src="assets/imgs/search.png">
+      </ion-buttons>
+    <!-- <ion-title>
+      V Ambassadors
+    </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar" [routerLink]="['/ambassadors']" routerDirection="back">
+    &nbsp; &nbsp; < V Founder </ion-toolbar> </ion-header> <ion-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="moveToLanding(dato)">
+            <ion-card class="h-100 card-bg" >
+              <img src="assets/imgs/btn-dato.png" />
+              <ion-card-header>
+                <ion-card-title>{{dato.Name}}</ion-card-title>
+                <ion-card-subtitle>V Founder</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col (click)="moveToLanding(japa)">
+            <ion-card class="h-100 card-bg" >
+              <img src="assets/imgs/btn-japa.png" />
+              <ion-card-header>
+                <ion-card-title>{{japa.Name}}</ion-card-title>
+                <ion-card-subtitle>V Founder</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-content>
+<app-footer-tab></app-footer-tab>

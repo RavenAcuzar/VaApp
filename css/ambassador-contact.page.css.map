@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/ambassador-contact/ambassador-contact.page.scss"
+    ],
+    "names": [],
+    "file": "ambassador-contact.page.css"
+}

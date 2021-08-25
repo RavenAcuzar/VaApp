@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Nomination History </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header class="has-border">
+      <ion-item>
+        <img [src]="profile.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)"
+          style="margin:auto; width: 100%;">
+        <!-- <ion-label text-wrap>
+          <h2 class="default-text">{{ profile.Name }}</h2>
+          <p class="default-text">{{ profile.IRID }}</p>
+          <p class="default-text">{{ profile.Team }}</p>
+
+        </ion-label> -->
+
+        <!-- <ion-card-title class="default-text" style="text-align: center; font-weight: 900; ">
+          {{profile.IRID != "" ? profile.IRID : 'Unavailable'}}
+        </ion-card-title> -->
+      </ion-item>
+    </ion-card-header>
+    <ion-card-title class="default-text" style="text-align: center; font-weight: 900; ">
+      {{profile.Name != "" ? profile.Name : 'Unavailable'}}
+    </ion-card-title>
+    <div style="background: #0d2c6c">
+     <p style="color: white;">Total Number of Votes: </p>
+      <!-- <ion-button horizontal="end">Save Changes</ion-button> -->
+    </div>
+    <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;">
+      Team: {{profile.Team != "" ? profile.Team : 'Unavailable'}}</p>
+    <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;">
+      Year: </p>
+    <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;">
+      Month: </p>
+    <ion-list lines="none">
+      <ion-item class="transparent-item" *ngFor="let v of votes">
+        {{v[0]}}: {{v[1]}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <!-- <ion-card>
+
+  </ion-card> -->
+
+
+</ion-content>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/test/test.page.scss"
+    ],
+    "names": [],
+    "file": "test.page.css"
+}

@@ -1,0 +1,82 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  font-family: Arial, Helvetica, sans-serif;
+  align-content: center;
+}
+
+ion-header [class^="toolbar"] {
+  border: none !important;
+}
+
+ion-navbar .toolbar-background {
+  background-color: transparent !important;
+}
+
+.transparent {
+  background: transparent;
+}
+
+.transparent-item {
+  background: transparent;
+  color: #808080;
+}
+
+.default-text {
+  color: #042F66;
+}
+
+.brighter-text {
+  color: #c0c0c0;
+}
+
+.default-element-color {
+  --background: #13254e;
+}
+
+// .gradient-background {
+//   --ion-background-color: linear-gradient(#40556e, #8b4999);
+// }
+
+.toolbar-container {
+  --background: #13254e;
+}
+.upper-toolbar {
+  --color: #ffffff;
+  --background: #0d2c6c;
+}
+.lower-toolbar {
+  --color: #ffffff;
+  --background: #ffffff;
+  color: #13254E;
+  font-weight: 700;
+}
+
+ion-card{
+  border-radius: 0 !important;
+}

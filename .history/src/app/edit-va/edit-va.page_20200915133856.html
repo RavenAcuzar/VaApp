@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <form>
+      <ion-item class="transparent-item">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input required [(ngModel)]="profile.Name" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item class="transparent-item">
+        <ion-label position="floating">Position</ion-label>
+        <ion-select [(ngModel)]="profile.Position" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="V PARTNERS">V Partner</ion-select-option>
+          <ion-select-option value="ASSOCIATE V PARTNERS">Associate V Partner</ion-select-option>
+          <ion-select-option value="V COUNCILS">V Council</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="transparent-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input required [(ngModel)]="profile.Email" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item class="transparent-item">
+        <ion-label position="floating">Contact Number</ion-label>
+        <ion-input required [(ngModel)]="profile.Contact" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <br />
+      <ion-button class="default-element-color" expand="block" type="submit" (click)="beforeSaving()">
+        Save
+      </ion-button>
+    </form>
+  </ion-list>
+</ion-content>
+<app-footer-tab></app-footer-tab>

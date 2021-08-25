@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tools</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-back-button slot="start">
+    &nbsp; &nbsp; <p class="default-text"> &nbsp; &nbsp; < Select Tool </p> </ion-back-button>
+</ion-header>
+<ion-content>
+  <div *ngIf="toolType == 'career'">
+    <p>Career</p>
+  </div>
+
+  <div *ngIf="toolType == 'roles'">
+    <p>roles</p>
+  </div>
+
+  <div *ngIf="toolType == 'guidelines'">
+    <p>guidelines</p>
+  </div>
+
+  <div *ngIf="toolType == 'conduct'">
+    <p>conduct</p>
+  </div>
+
+  <div *ngIf="toolType == 'network'">
+    <p>network</p>
+  </div>
+
+
+
+</ion-content>

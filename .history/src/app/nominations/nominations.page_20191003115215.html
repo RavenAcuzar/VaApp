@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nominations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--padding-top: 20px">
+  <ion-button *ngFor="let cat of category" expand="block" class="default-element-color" style="color: white"
+    (click)="selectedCategory(cat)">
+    {{ cat.name }}
+  </ion-button>
+</ion-content>

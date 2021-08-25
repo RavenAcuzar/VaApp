@@ -1,0 +1,48 @@
+<!-- <ion-buttons slot="end">
+    <button ion-button style="background: transparent !important" >
+      Edit
+    </button>
+  </ion-buttons> -->
+
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="background: #E3E5E6; margin-left: 0px; margin-right: 0px">
+    <img src="assets/imgs/profile-icon.png" style="margin:auto; width: 200px;"
+      (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+
+  </ion-card>
+  <h2 class="ion-text-center">{{ profile.Name }}</h2>
+  <ion-list lines="none" style="padding-left: 53px;">
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Title: {{ profile.CompanyTitle }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Team:</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Based Country:</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Year of Joined:</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Email: {{ profile.Email }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-top: 0px; margin-bottom: 0px;"> Contact Number: {{ profile.Contact }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button style="width:295px; margin-right: auto; margin-left: auto;" expand="block" icon-start id="btnLogin"
+    class="default-element-color" (click)="edit()">
+  </ion-button>
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Search </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+            <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar type="text" debounce="500" (ionChange)="handleInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list *ngIf="inList">
+  <ion-item *ngFor="let item of displayItems" (click)="search(item)">{{ item.name }}</ion-item>
+</ion-list>
+<ion-content>
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

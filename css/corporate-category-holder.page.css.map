@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/corporate-category-holder/corporate-category-holder.page.scss"
+    ],
+    "names": [],
+    "file": "corporate-category-holder.page.css"
+}

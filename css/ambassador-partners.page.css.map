@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,OAAO;CACpB;;AAED,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,KAAK;CACb;;AACD,AAAA,eAAe,CAAA;EACf,KAAK,EAAC,OAAO;EAAE,UAAU,EAAE,GAAG;CAC7B",
+    "sources": [
+        "../src/app/ambassador-partners/ambassador-partners.page.scss"
+    ],
+    "names": [],
+    "file": "ambassador-partners.page.css"
+}

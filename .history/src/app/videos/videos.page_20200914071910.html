@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']"
+    routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar"  [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < Videos </ion-toolbar> </ion-header>
+<ion-content>
+  <ion-card *ngFor="let vid of videos" (click)="selectVideo(vid)" text-wrap>
+    <img [src]="vid.image">
+    <ion-card-header text-wrap style="color:#042F66;font-weight: 600">
+      {{ vid.title }}
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+<app-footer-tab></app-footer-tab>

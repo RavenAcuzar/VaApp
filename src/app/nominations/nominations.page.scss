@@ -1,0 +1,13 @@
+.grid-selection{
+    width: 100vw;
+    >ion-row{
+        padding: 20px;
+        div{
+            width: 100%; 
+            text-align: center;
+            img{
+                width: 33%;
+            }
+        }
+    }
+}

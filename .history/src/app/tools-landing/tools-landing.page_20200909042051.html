@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      &nbsp; &nbsp; <p class="default-text"> &nbsp; &nbsp; < Select Tool </p>
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="toolType == 'career'">
+    <p>Career</p>
+  </div>
+
+  <div *ngIf="toolType == 'roles'">
+    <p>roles</p>
+  </div>
+
+  <div *ngIf="toolType == 'guidelines'">
+    <p>guidelines</p>
+  </div>
+
+  <div *ngIf="toolType == 'conduct'">
+    <p>conduct</p>
+  </div>
+
+  <div *ngIf="toolType == 'network'">
+    <p>network</p>
+  </div>
+
+
+
+</ion-content>

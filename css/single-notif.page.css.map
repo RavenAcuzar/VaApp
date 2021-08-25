@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,SAAS,EAAE,eAAe;CAC7B;;AAED,AAAA,OAAO,CAAA;EACH,UAAU,EAAE,iBAAiB;CAChC;;AAED,AAAA,iBAAiB,CAAC;EACd,WAAW,EAAE,mCAAmC;EAChD,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "../src/app/single-notif/single-notif.page.scss"
+    ],
+    "names": [],
+    "file": "single-notif.page.css"
+}

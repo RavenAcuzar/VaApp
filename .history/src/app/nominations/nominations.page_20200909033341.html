@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nominations</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-back-button slot="start">
+    &nbsp; &nbsp; <p class="default-text"> &nbsp; &nbsp; < Home </p> </ion-back-button>
+</ion-header>
+
+<ion-content style="--padding-top: 20px">
+  <ion-button *ngFor="let cat of category" expand="block" class="default-element-color" style="color: white"
+    (click)="selectedCategory(cat)">
+    {{ cat.name }}
+  </ion-button>
+</ion-content>
+<app-footer-tab></app-footer-tab>

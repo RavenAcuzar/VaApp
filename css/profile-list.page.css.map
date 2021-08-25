@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,YAAY,CAAA,QAAC;EACb,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "../src/app/profile-list/profile-list.page.scss"
+    ],
+    "names": [],
+    "file": "profile-list.page.css"
+}

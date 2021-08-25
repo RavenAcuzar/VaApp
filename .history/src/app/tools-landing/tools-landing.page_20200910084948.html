@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Select Tool </p>
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="toolType == 'career'">
+    <p style="padding: 20px; text-align: center;">The V believes in continuous progress,
+      and this can only be attained
+      if opportunities for advancement are
+      provided for our V Ambassadors. As shown
+      in the diagram below, an Independent
+      Representative can attain V Elite Leader
+      status once he or she has completed the V
+      Advancement Programs successfully. Once
+      they gain membership in
+      V Elite Leaders’ pool, they are now eligible
+      to be nominated into the
+      V Council.</p>
+
+    <p style="padding: 20px; text-align: center;">
+      From this point forward, any upward
+      movement will be dependent on
+      nomination and performance evaluation.
+      Each level up requires a much tougher and
+      stringent evaluation process, and also
+      means that more
+      responsibility is being undertaken by a V
+      Ambassador. Benefits and
+      privileges of each level of V
+      Ambassadorship will be discussed in detail
+      in the following chapters.
+    </p>
+
+    <img src='../../assets/career.png'>
+  </div>
+
+  <div *ngIf="toolType == 'roles'" style="position: absolute; top: 40%; left: 30%;">
+    <h1>INCREASE SALES </h1>
+    <ul>
+      <li>Facilitate regular meetings and call
+        conferences to address on-going market
+        conditions
+      </li>
+      <li>Get monthly reports on market performance,
+        challenges, and other important factors</li>
+      <li>Compare yearly sales performance to
+        monitor growth or decline</li>
+      <li>Monitor respective market’s place in
+        performance rankings worldwide</li>
+      <li>Provide consistent sales performance</li>
+      <li>Dentify potential markets and strengthen existing markets>
+      </li>
+
+    </ul>
+    <h1>EVENTS</h1>
+    <ul>
+      <li>Participate actively in planning and
+        scheduling events
+      </li>
+      <li>Select appropriate speakers and guests</li>
+      <li>Facilitate both product and motivational
+        trainings regularly
+      </li>
+      <li>Promote V Convention and other V-Events
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="toolType == 'guidelines'" style="position: absolute; top: 40%; left: 30%;">
+    <p style="padding: 20px; text-align: center;">The V believes in continuous progress,
+      and this can only be attained
+      if opportunities for advancement are
+      provided for our V Ambassadors. As shown
+      in the diagram below, an Independent
+      Representative can attain V Elite Leader
+      status once he or she has completed the V
+      Advancement Programs successfully. Once
+      they gain membership in
+      V Elite Leaders’ pool, they are now eligible
+      to be nominated into the
+      V Council.</p>
+
+    <p style="padding: 20px; text-align: center;">
+      From this point forward, any upward
+      movement will be dependent on
+      nomination and performance evaluation.
+      Each level up requires a much tougher and
+      stringent evaluation process, and also
+      means that more
+      responsibility is being undertaken by a V
+      Ambassador. Benefits and
+      privileges of each level of V
+      Ambassadorship will be discussed in detail
+      in the following chapters.
+    </p>
+
+    <img src='../../assets/commision.png'>
+  </div>
+
+  <div *ngIf="toolType == 'conduct'" style="position: absolute; top: 40%; left: 30%;">
+    <p>Coming Soon!</p>
+  </div>
+
+  <div *ngIf="toolType == 'network'" style="position: absolute; top: 40%; left: 30%;">
+    <p>Coming Soon!</p>
+  </div>
+
+
+
+</ion-content>

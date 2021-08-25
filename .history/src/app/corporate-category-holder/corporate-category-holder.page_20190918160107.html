@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ category.display }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <div *ngFor="let person of corporate">
+      <ion-item *ngIf="person.Department == category.name" class="transparent-item" (click)="viewProfile(person)">
+        <ion-avatar item-start>
+          <img [src]="person.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <h2 class="default-text">{{ person.Name }}</h2>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

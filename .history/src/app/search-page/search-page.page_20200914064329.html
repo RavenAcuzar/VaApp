@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < Search </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list *ngIf="isItemAvailable">
+  <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+</ion-list>
+<ion-content>
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

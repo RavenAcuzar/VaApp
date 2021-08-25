@@ -1,0 +1,77 @@
+<ion-app>
+  <ion-split-pane>
+
+    <ion-menu type="overlay">
+      <ion-header>
+
+      </ion-header>
+      <ion-content class="sidemenu">
+        <ion-list>
+          <div *ngIf="!hasAccount">
+            <br />
+            <br />
+          </div>
+          <!-- <ion-item *ngIf="hasAccount"> -->
+          <ion-item *ngIf="hasAccount" lines="none" class="sidebar-header ion-text-center">
+            <ion-thumbnail class=" profile--thumb image-center pt-10" item-start>
+              <img [src]="user.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+            </ion-thumbnail>
+
+            <ion-label class="header-info pb-10">
+              <h2 class=""><strong>{{ user.Name }}</strong></h2>
+              <p color="Contrast">{{ user.Email }}</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-menu-toggle ion-item [routerLink] = "['/home']" routerDirection='root'>
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">Home</b>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle *ngIf="hasAccount" (click)="goToProfile()">
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">My Profile</b>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerLink] = "[p.component]" routerDirection='root'>
+              <b style="padding-left: 50px" class="brighter-text">{{p.title}}</b>
+            </ion-item>
+
+          </ion-menu-toggle>
+
+          <!-- <ion-menu-toggle ion-itemcd [routerLink] = "['/pdf-votes']" routerDirection='root'>
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">Tally Votes</b>
+            </ion-item>
+          </ion-menu-toggle> -->
+
+          <ion-menu-toggle *ngIf="hasAccount" ion-item (click)="logOut()">
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">Log out</b>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle *ngIf="!hasAccount" ion-itemcd [routerLink] = "['/login']" routerDirection='forward'>
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">Log in</b>
+            </ion-item>
+          </ion-menu-toggle>
+          
+<!-- THIS ADMIN LOGIN IS USELESS -->
+          <!-- <ion-menu-toggle *ngIf="!hasAccount" ion-itemcd (click)="adminLogIn()">
+            <ion-item>
+              <b style="padding-left: 50px" class="brighter-text">Admin Log in</b>
+            </ion-item>
+          </ion-menu-toggle> -->
+
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+        <img src="assets/imgs/sidebar-footer.png">
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

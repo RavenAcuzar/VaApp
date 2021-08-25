@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+   <ion-buttons slot="end" [routerLink]="['/search-page']" routerDirection='forward'>
+      
+      <img style="padding-right: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start" *ngIf="isFounder">
+      <p class="default-text"> &nbsp; &nbsp; < V Founder </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isPartner">
+      <p class="default-text"> &nbsp; &nbsp; < V Partner </p>
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isAssociatePartner">
+      <p class="default-text"> &nbsp; &nbsp; < Associate V Partner </p>
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isCouncil">
+      <p class="default-text"> &nbsp; &nbsp; < V Council </p>
+    </ion-back-button>
+
+    <!-- <div *ngIf="isFounder">
+      <p class="default-text"> &nbsp; &nbsp; < V Founders </p>
+    </div>
+    <div *ngIf="isPartner">
+      <p class="default-text"> &nbsp; &nbsp; < V Partners </p>
+    </div>
+    <div *ngIf="isAssociatePartner">
+      <p style="font-weight: 600" class="default-text"> &nbsp; &nbsp;< Associate V Partners </p>
+    </div>
+    <div *ngIf="isCouncil">
+      <p class="default-text"> V Council</p>
+    </div> -->
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="gradient-background">
+  <ion-card style="background: #E3E5E6;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+    <img *ngIf="!isFounder" [src]="ambassador.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)"
+      style="margin:auto; width: 100%;" />
+    <!-- </ion-img> -->
+    <ion-card-header *ngIf="isPartner">
+      <ion-card-title class="default-text" style="text-align: center; font-weight: 900; ">
+        {{ambassador.Name != "" ? ambassador.Name : 'Unavailable'}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="isPartner">
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> 
+        {{ambassador.CompanyTitle != "" ? ambassador.CompanyTitle : 'Unavailable'}}</p>
+      <!-- <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;" [hidden]="hideIRID"> IRID:
+        {{ambassador.IRID != "" ? ambassador.IRID : 'Unavailable'}}</p> -->
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> 
+        {{ambassador.Email != "" ? ambassador.Email : 'Unavailable'}}</p>
+      <!-- <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Contact
+        Number: {{ambassador.Contact != "" ? ambassador.Contact : 'Unavailable'}}</p> -->
+    </ion-card-content>
+  </ion-card>
+  <!-- <img [src]="assets/imgs/profile-photos-dato"> -->
+
+
+
+
+  <div *ngIf="isFounder">
+    <ion-card style="background: #E3E5E6;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+      <img [src]="ambassador.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)"
+        style="margin:auto; width: 100%;">
+      <!-- <ion-card-header>
+        <ion-card-title style="text-align: left;">{{ambassador.name != "" ? ambassador.name : 'Unavailable'}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="default-text" style="text-align: left; margin-top: 0px;margin-bottom: 0px; font-weight: 700;">
+          Title:
+          {{ambassador.CompanyTitle != "" ? ambassador.CompanyTitle : 'Unavailable'}}</p>
+      </ion-card-content> -->
+    </ion-card>
+    <div [innerHtml]="ambassador.Description" style="padding: 40px; text-align: left; color: #042F66;"></div>
+  </div>
+
+  <div *ngIf="isPartner">
+    <div [innerHtml]="ambassador.Description" style="padding: 40px; text-align: left; color: #042F66"></div>
+  </div>
+
+  <div *ngIf="isAssociatePartner || isCouncil">
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="9" style="padding-left: 0;">
+          <p style="font-weight: 900; font-weight: 700; font-size: 20px" class="default-text">
+            {{ambassador.Name != "" ? ambassador.Name : 'Unavailable'}}</p>
+        </ion-col>
+        <ion-col size="3">
+          <img *ngIf="!isFounder" [src]="ambassador.TeamLogo" (error)="Defaults_.TEAM_LOGO_TO_DEFAULT($event)"/>
+        </ion-col>
+      </ion-row>
+      
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;" [hidden]="hideIRID"> IRID:
+        {{ambassador.IRID != "" ? ambassador.IRID : 'Unavailable'}}</p> 
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Title:
+        {{ambassador.CompanyTitle != "" ? ambassador.CompanyTitle : 'Unavailable'}}
+      </p>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Team:
+        {{ambassador.Team != "" ? ambassador.Team : 'Unavailable'}}
+      </p>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Based Country:
+        {{ambassador.BaseCountry ? ambassador.BaseCountry : 'Unavailable'}}
+      </p>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Year Joined:
+        {{ambassador.YearJoined ? ambassador.YearJoined : 'Unavailable'}}
+      </p>
+      <!-- <div>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Based
+        Country:</p>
+    </div>
+    <div>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Year of
+        Joined:</p>
+    </div> -->
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Email:
+        {{ambassador.Email != "" ? ambassador.Email : 'Unavailable'}}
+      </p>
+      <p class="default-text" style=" margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Contact
+        Number: {{ambassador.Contact != "" ? ambassador.Contact : 'Unavailable'}}</p>
+    </ion-card-content>
+  </div>
+
+  <!-- <div *ngIf="isCouncil">
+  <p class="brighter-text"> Is Council</p> -->
+  <!-- put ui for council here if needed -->
+  <!-- </div> -->
+
+</ion-content>
+<app-footer-tab></app-footer-tab>

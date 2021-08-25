@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/contact-profiles/contact-profiles.page.scss"
+    ],
+    "names": [],
+    "file": "contact-profiles.page.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/ambassador-council/ambassador-council.page.scss"
+    ],
+    "names": [],
+    "file": "ambassador-council.page.css"
+}

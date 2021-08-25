@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<br /> <br />
+<ion-content>
+
+  <ion-grid *ngIf="!hasAccount" style="padding-top: 25%;">
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/videos']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-videos.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">VIDEOS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" *ngIf="hasNominationAccess"
+          [routerLink]="['/nominations']" routerDirection='forward'>
+          <img src="assets/imgs/icn-nomination.png">
+        </ion-button>
+        <ion-button size="large" class="home-buttons default-element-color" *ngIf="!hasNominationAccess">
+          <img src="assets/imgs/icn-nomination.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">VA NOMINATION</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/tools']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-tools.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">TOOLS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/directory']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-directory.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">DIRECTORY</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="hasAccount">
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/ambassadors']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-ambassador.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">V AMBASSADORS</p>
+
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/directory']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-directory.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">DIRECTORY</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/tools']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-tools.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">TOOLS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="goToNomination()"
+          [routerLink]="['/nominations']" routerDirection='forward'>
+          <img src="assets/imgs/icn-nomination.png">
+        </ion-button>
+        <!-- <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/nomination-history']"
+          routerDirection='forward' *ngIf="!hasNominationAccess">
+          <img src="assets/imgs/icn-nomination.png">
+        </ion-button> -->
+        <p class="small-text" style="padding: 0px;">VA NOMINATION</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/videos']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-videos.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">VIDEOS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openTravel()">
+          <img src="assets/imgs/icn-travel.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">TRAVEL REQUEST</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" [routerLink]="['/notifications']"
+          routerDirection='forward'>
+          <img src="assets/imgs/icn-notification.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">NOTIFICATION</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer-tab></app-footer-tab>

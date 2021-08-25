@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/ambassador-category-holder/ambassador-category-holder.page.scss"
+    ],
+    "names": [],
+    "file": "ambassador-category-holder.page.css"
+}

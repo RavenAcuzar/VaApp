@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<br /> <br />
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/ambassadors'], true)">
+          <img src="assets/imgs/icn-ambassador.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">V AMBASSADORS</p>
+
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/directory'], true)">
+          <img src="assets/imgs/icn-directory.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">DIRECTORY</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/tools'], true)">
+          <img src="assets/imgs/icn-tools.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">TOOLS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/nominations'], true)">
+          <img src="assets/imgs/icn-nomination.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">VA NOMINATION</p>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/videos'], true)">
+          <img src="assets/imgs/icn-videos.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">VIDEOS</p>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/vertical-hr.png">
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/travel-request'], true)">
+          <img src="assets/imgs/icn-travel.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">TRAVEL REQUEST</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/horizontal-hr.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="home-buttons default-element-color" (click)="openPage(['/notifications'], true)">
+          <img src="assets/imgs/icn-notification.png">
+        </ion-button>
+        <p class="small-text" style="padding: 0px;">NOTIFICATION</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer-tab></app-footer-tab>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">vaservice.the-v.net</domain>
+        <domain includeSubdomains="true">site.the-v.net</domain>
+        <domain includeSubdomains="true">the-v.net</domain>
+        <domain includeSubdomains="true">players.brightcove.net</domain>
+        <domain includeSubdomains="true">metrics.brightcove.com</domain>
+        <domain includeSubdomains="true">vjs.zencdn.net</domain>
+        <domain includeSubdomains="true">manifest.prod.boltdns.net</domain>
+        <domain includeSubdomains="true">192.168.1.101</domain>
+        <domain includeSubdomains="true">bcbolte44808b7-a.akamaihd.net</domain>
+
+
+<!-- http://192.168.1.101 -->
+<!-- http://bcbolte44808b7-a.akamaihd.net/media/v1/hls/v4/clear/3745659807001/44aa66ef-ad33-427b-a397-37c7a5d7237d/d6a8664a-691a-45fd-9913-526ad36ae20e/5x/segment0.ts?akamai_token=exp=1600079427~acl=/media/v1/hls/v4/clear/3745659807001/44aa66ef-ad33-427b-a397-37c7a5d7237d/d6a8664a-691a-45fd-9913-526ad36ae20e/*~hmac=6defbc9e8d4a03e73f1aa12db38a901d667eda59bb140d261159c098d64e9a13 -->
+        <domain includeSubdomains="true">brightcove04pmdo-a.akamaihd.net</domain>
+        <domain includeSubdomains="true">brightcove04.o.brightcove.com</domain>
+<!-- the-v.net -->
+<!-- vjs.zencdn.net/vttjs/0.12.5/vtt.global.min.js:1 Failed to load resource:  -->
+        <!-- "http://site.the-v.net/images/default-source/va/staff/reejoie.jpg" -->
+    </domain-config>
+      <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

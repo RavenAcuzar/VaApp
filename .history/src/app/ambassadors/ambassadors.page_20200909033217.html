@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar"  [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < V Ambassadors </ion-toolbar> </ion-header> <ion-content>
+      <ion-grid style="text-align: center;">
+        <div [routerLink]="['/ambassador-founder']"
+        routerDirection="forward">
+          <img class="img-btn" src="assets/imgs/vpartners.png">
+          <br>
+          <br>
+          <ion-label class="ambassador-title">V Founders</ion-label>
+      </div>
+
+        <ion-grid style="padding-left: 30px;">
+          <ion-row>
+            <ion-col [routerLink]="['/ambassador-partners']"
+            routerDirection="forward">
+              <ion-row>
+                <img src="assets/imgs/vp-icon.png" >
+              </ion-row>
+              <ion-row><strong>V Partners</strong></ion-row>
+              </ion-col>
+            <ion-col [routerLink]="['/ambassador-associate']" routerDirection="forward">
+              <ion-row><img src="assets/imgs/avp-icon.png"></ion-row>
+              <ion-row><strong>Associate <br>V Partners</strong></ion-row>
+              </ion-col>
+            <ion-col [routerLink]="['/ambassador-council']" routerDirection="forward">
+              <ion-row><img src="assets/imgs/vc-icon.png"></ion-row>
+              <ion-row><strong>V Council</strong></ion-row>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <!-- <ion-row *ngFor="let format of upcomingFormat">
+      <br />
+
+      <ion-button expand="block" (click)="categoryHandler(format)">
+        {{ format }}
+      </ion-button>
+    </ion-row> -->
+      </ion-grid>
+
+      <!-- <ion-tabs>
+    <ion-row>
+      <ion-col style="padding:0px;">
+        <img style="width:100%" src="assets/imgs/divider.png">
+      </ion-col>
+    </ion-row>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="schedule">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="speakers">
+        <ion-icon name="contacts"></ion-icon>
+        <ion-label>Travel Request</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="map">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>V Ambassadors</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="about">
+        <ion-menu-button></ion-menu-button>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+      </ion-content>
+<app-footer-tab></app-footer-tab>

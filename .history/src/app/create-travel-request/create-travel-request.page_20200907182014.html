@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Create Travel Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines *ngFor="let req of requestList; let i = index">
+    <ion-item>
+      <ion-label class="default-text">Destination</ion-label>
+      <ion-input required type="text" autofocus [(ngModel)]="req.Destination"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="default-text">From</ion-label>
+      <ion-input required type="date" [(ngModel)]="req.StartDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="default-text">To</ion-label>
+      <ion-input required type="date" [(ngModel)]="req.EndDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="default-text">Purpose</ion-label>
+      <ion-input required type="text" [(ngModel)]="req.Purpose"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="default-text">Remarks</ion-label>
+      <ion-input type="text" [(ngModel)]="req.Remarks"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <button ion-button class="default-element-color" full (click)="addRequest()">Add Destination</button>
+
+    <button ion-button class="default-element-color" full (click)="beforeSaving()">
+      Create Request
+    </button>
+
+    <button ion-button class="default-element-color" full (click)="goToHistory()">Travel History</button>
+  </div>
+</ion-content>
+<app-footer-tab></app-footer-tab>

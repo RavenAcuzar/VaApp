@@ -1,0 +1,27 @@
+ion-toolbar .toolbar-background {
+  background-color: #263a52;
+}
+
+.login {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  height: 100%;
+}
+
+.white-background {
+  background-color: #fff;
+  color: #808080;
+}
+
+ion-toolbar {
+  --color: #ffffff;
+  --background: #0d2c6c;
+}
+/*# sourceMappingURL=login.page.css.map */

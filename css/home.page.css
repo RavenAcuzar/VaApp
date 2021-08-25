@@ -1,0 +1,23 @@
+ion-toolbar .toolbar-background {
+  background-color: #263a52;
+}
+
+ion-col {
+  text-align: center;
+}
+
+.home-buttons {
+  --background: white;
+  --box-shadow: none;
+  width: 150px;
+  height: auto;
+}
+
+.small-text {
+  font-size: 3.5vw;
+}
+
+.ion-label {
+  font-size: 4px;
+}
+/*# sourceMappingURL=home.page.css.map */

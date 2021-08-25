@@ -1,0 +1,1 @@
+export const AMBASSADOR_TIMESTAMPS = 'dEfjopaWRfnko621325'

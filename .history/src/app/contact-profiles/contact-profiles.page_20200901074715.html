@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>V Profiles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <b>V Partners</b>
+    </ion-list-header>
+    <div *ngFor="let vpart of ambassadors">
+      <ion-item *ngIf="vpart.Position == 'V PARTNERS'" (click)="viewContact(vpart)">
+        <ion-avatar slot="start">
+          <img [src]="vpart.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <p class="default-text">{{ vpart.Name }}</p>
+      </ion-item>
+    </div>
+    <ion-list-header>
+      <b>Associate V Partners</b>
+    </ion-list-header>
+    <div *ngFor="let assvpart of ambassadors">
+      <ion-item *ngIf="assvpart.Position == 'ASSOCIATE V PARTNERS'" (click)="viewContact(assvpart)">
+        <ion-avatar slot="start">
+          <img [src]="assvpart.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <p class="default-text">{{ assvpart.Name }}</p>
+      </ion-item>
+    </div>
+    <ion-list-header>
+      <b>V Councils</b>
+    </ion-list-header>
+    <div *ngFor="let coun of ambassadors">
+      <ion-item *ngIf="coun.Position == 'V COUNCILS'" (click)="viewContact(coun)">
+        <ion-avatar slot="start">
+          <img [src]="coun.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <p class="default-text">{{ coun.Name }}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

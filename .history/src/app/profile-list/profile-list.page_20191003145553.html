@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profiles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="hasAccount">
+      <ion-button expand="full" (click)="toProfile()">
+        My Profile
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="block" (click)="toVContact()">
+        Ambassador Profiles
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

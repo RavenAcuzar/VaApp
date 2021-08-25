@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Search </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+            <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar type="text" debounce="500" (ionChange)="handleInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list *ngIf="inList">
+  <ion-item *ngFor="let item of displayItems" (click)="search(item)">{{ item.Name }}</ion-item>
+</ion-list>
+<ion-content>
+ <div *ngIf="displayItems.length == 0 && inList" style="color: rgba(0,0,0,0.4); background-color: rgba(0,0,0,0.3); position: relative; height: 100%; width:100%">
+  <div style="position: absolute; height:140px; top: 0; bottom: 0; margin: auto; text-align: center; width:100%; ">
+    <ion-icon style="font-size: 100px;" name="contact"></ion-icon>
+   <p style="font-weight:300; margin-block-start: 0;">User not found.</p>
+  </div>
+ </div>
+</ion-content>
+<app-footer-tab></app-footer-tab>

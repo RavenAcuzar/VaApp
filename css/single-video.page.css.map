@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/single-video/single-video.page.scss"
+    ],
+    "names": [],
+    "file": "single-video.page.css"
+}

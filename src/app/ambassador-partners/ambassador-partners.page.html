@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+   <ion-buttons slot="end" [routerLink]="['/search-page']" routerDirection='forward'>
+      
+      <img style="padding-right: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+        V Ambassadors
+      </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar" [routerLink]="['/ambassadors']" routerDiraction="back">
+    &nbsp; &nbsp; < V Partner </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div *ngIf="hasAccount">
+      <ion-grid>
+      <ion-row *ngFor="let a of vps">
+        <ion-col>
+          <ion-card class="partner-card" (click)="moveToLanding(a)">
+            <ion-row>
+              <ion-col>
+                <ion-card-header>
+                  <ion-card-title class="card--title" style="color:white;">{{a.Name}}</ion-card-title>
+                  <ion-card-subtitle class="card--subtitle" style="color:#E3D4B9; margin-top: 0px;">{{a.CompanyTitle}}
+                  </ion-card-subtitle>
+                </ion-card-header>
+              </ion-col>
+              <ion-col style="padding-right: 0px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px;">
+                <img [src]="a.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)" style="height:100%"  />
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+    <div *ngIf="!hasAccount" class="desc">
+      <img src="assets/imgs/vp-icon.png" >
+      <h3>V Partner</h3>
+      <p>The esteemed founders of the QI Group and the pioneers of the company and the network are our V Partners.</p>
+      <p>They set the company strategy, manage the overall operations, and create the unique culture that fuels the passion and commitment of the entire global network. V Partners are deeply revered and respected for their business acumen, achievements and their wisdom. Their talks at V-Conventions and other events are sought-after.</p>
+    </div>
+    
+</ion-content>
+<app-footer-tab></app-footer-tab>

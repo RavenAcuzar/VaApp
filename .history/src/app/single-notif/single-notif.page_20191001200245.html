@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ data.localTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="data.ImageLink">
+    <ion-item>
+      <ion-row>
+        <ion-col style="text-align: center; font-size: 20px" size="15">
+          <ion-icon name="eye"></ion-icon> Hits: {{ data.Hits }}
+        </ion-col>
+        <ion-col style="text-align: center; font-size: 20px" size="15">
+          {{ data.CreatedOnDate }}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+  <br />
+  <div class="data-description">
+    <div [innerHTML]="data.description"></div>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="bottomCol" size="4">
+          <ion-icon name="heart"></ion-icon> {{ data.heart }}
+        </ion-col>
+        <ion-col class="bottomCol" size="4">
+          <ion-icon name="happy"></ion-icon> {{ data.wow }}
+        </ion-col>
+        <ion-col class="bottomCol" size="4">
+          <ion-icon name="sad"></ion-icon> {{ data.sad }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

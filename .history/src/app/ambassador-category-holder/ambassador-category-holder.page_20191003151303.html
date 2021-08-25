@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ category }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none" text-wrap>
+    <div *ngFor="let person of ambassador">
+      <ion-item *ngIf="person.Position == category" (click)="handlePerson(person)">
+        <ion-avatar slot="start">
+          <img [src]="person.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <p class="default-text">{{ person.Name }}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACvB;;AACD,AAAA,YAAY,CAAC;EACX,UAAU,EAAE,IAAI;CACjB;;AAED,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,eAAe;CACxB;;AAED,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,OAAO;CAU5B;;AAXD,AAGI,QAHI,CAGJ,cAAc,CAAA;EACV,WAAW,EAAE,GAAG;EAChB,KAAK,EAAE,KAAK;CACf;;AANL,AAOI,QAPI,CAOJ,iBAAiB,CAAA;EACb,WAAW,EAAE,GAAG;CAEnB",
+    "sources": [
+        "../src/app/ambassador-founder/ambassador-founder.page.scss"
+    ],
+    "names": [],
+    "file": "ambassador-founder.page.css"
+}

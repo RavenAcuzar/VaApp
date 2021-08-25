@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,SAAS,EAAE,IAAI;CAClB;;AAED,AAAA,WAAW,CAAC;EACR,SAAS,EAAE,IAAI;CAClB;;AAED,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,OAAO;EACzB,WAAW,EAAE,4BAA4B;EACzC,aAAa,EAAE,MAAM;CACxB;;AAED,AAAA,kBAAkB,CAAC;EACf,KAAK,EAAE,IAAI;EACX,KAAK,EAAC,KAAK;CACd",
+    "sources": [
+        "../src/app/single-travel-request/single-travel-request.page.scss"
+    ],
+    "names": [],
+    "file": "single-travel-request.page.css"
+}

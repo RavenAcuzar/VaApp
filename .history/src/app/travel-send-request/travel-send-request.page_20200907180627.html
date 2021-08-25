@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Travel Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="inset">
+    <div *ngFor="let req of requestList; let i = index">
+      <ion-item>
+
+        <ion-input [(ngModel)]="req.Destination" [ngModelOptions]="{standalone: true}" placeholder="Destination">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="req.City" [ngModelOptions]="{standalone: true}" placeholder="City">
+
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">From Date</ion-label>
+        <ion-datetime [(ngModel)]="req.StartDate"></ion-datetime>
+        <!-- [max]="today" -->
+      </ion-item>
+
+      <ion-item *ngIf="req.StartDate">
+        <ion-label position="floating">End Date</ion-label>
+        <ion-datetime [(ngModel)]="req.EndDate"></ion-datetime>
+        <!-- [min]="req.StartDate" [max]="today" -->
+      </ion-item>
+
+      <ion-item>
+
+        <ion-input [(ngModel)]="req.Purpose" [ngModelOptions]="{standalone: true}" placeholder="Purpose">
+
+        </ion-input>
+      </ion-item>
+
+      <ion-tem>
+        <ion-textarea [(ngModel)]="req.Remarks" placeholder="Enter Remarks here..."></ion-textarea>
+      </ion-tem>
+
+      <ion-grid>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button *ngIf="requestList.length > 1 && i != 0" (click)="removeRequest(i)">Remove Request</ion-button>
+        </ion-col>
+      </ion-grid>
+    </div>
+  </ion-list>
+  <ion-grid>
+    <ion-col size="12" class="ion-text-center">
+      <ion-button (click)="addRequest()">Add Destination</ion-button>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center">
+      <ion-button (click)="sendRequests()">Send Requests</ion-button>
+    </ion-col>
+  </ion-grid>
+</ion-content>
+<app-footer-tab></app-footer-tab>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,WAAW,EAAE,IAAI;CACpB;;AAED,AAAA,YAAY,CAAC;EACT,cAAc,EAAE,MAAM;CACzB;;AAED,AAAA,YAAY,CAAC;EACT,SAAS,EAAE,KAAK;CACnB",
+    "sources": [
+        "../src/app/travel-request/travel-request.page.scss"
+    ],
+    "names": [],
+    "file": "travel-request.page.css"
+}

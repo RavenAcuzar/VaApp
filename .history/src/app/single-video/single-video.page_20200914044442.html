@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Watch </p>
+    </ion-back-button>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-list-header class="transparent-item" text-wrap>
+      {{ content.name }}
+    </ion-list-header>
+  </ion-list>
+  <iframe [src]="videoSrc | safe" allowfullscreen webkitallowfullscreen mozallowfullscreen
+    style="width: 100%; height: 400px;" allow='autoplay; encrypted-media'></iframe>
+</ion-content>
+<app-footer-tab></app-footer-tab>

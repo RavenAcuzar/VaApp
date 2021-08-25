@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Generate PDF</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label position="floating">From Date</ion-label>
+      <!-- <ion-input [(ngModel)]="fromDate" (click)="selectFromDate()"></ion-input>
+       -->
+      <ion-datetime (ionChange)="selectFromDate()" [(ngModel)]="fromDate" [max]="today"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="fromDate">
+      <ion-label position="floating">End Date</ion-label>
+      <ion-datetime (ionChange)="selectEndDate()" [(ngModel)]="endDate" [min]="fromDate" [max]="today"></ion-datetime>
+    </ion-item>
+
+    <ion-button *ngIf="endDate" expand="full" icon-start id="btnGetVotes" class="default-element-color"
+      (click)="getVotes()">
+      Get Votes
+    </ion-button>
+  </div>
+
+
+  <div *ngIf="viewTable.length">
+    <ion-row class="header-row">
+      <ion-col size="4">
+        Vote By
+      </ion-col>
+      <ion-col size="2">
+        Rating
+      </ion-col>
+      <ion-col size="4">
+        Vote Date
+      </ion-col>
+      <ion-col size="2">
+        Status
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let votes of viewTable; let i = index;">
+      <ion-col size="4">
+        {{votes.CreatedBy}}
+      </ion-col>
+      <ion-col size="2">
+        {{votes.Rate}}
+
+      </ion-col>
+      <ion-col size="4">
+        {{votes.CreatedOn}}
+
+      </ion-col>
+      <ion-col size="2">
+        {{votes.Status}}
+
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="firstPage()">
+      <ion-icon name="play-back" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="previousPage()" [disabled]="currentPage == 1">
+      <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="nextPage()" [disabled]="currentPage == (totalPages - 1)">
+      <ion-icon name="chevron-forward" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="lastPage()">
+      <ion-icon name="play-forward" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  
+</ion-content>

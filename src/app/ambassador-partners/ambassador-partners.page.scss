@@ -1,0 +1,27 @@
+.partner-card {
+  height: 130px;
+  background: #c8ab79;
+}
+
+.card--title {
+  color: white;
+}
+.card--subtitle{
+color:#E3D4B9; margin-top: 0px;
+}
+.desc{
+  color: #12244F;
+  padding: 10px 30px;
+  font-size: 17px;
+  text-align: center;
+  img{
+    width: 35vw;
+}
+  h3 {
+    font-weight: bold;
+  }
+  p{
+    text-align: left;
+    line-height: 1.4em;
+  }
+}

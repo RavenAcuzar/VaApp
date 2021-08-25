@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Nomination Profile </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header class="has-border">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="profile.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <ion-label text-wrap>
+          <h2 class="default-text">{{ profile.Name }}</h2>
+          <p class="default-text">{{ profile.IRID }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <br />
+    <ion-list lines="none">
+      <ion-item class="transparent-item">
+        Team: {{ profile.Team }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Nominated By: {{ profile.Nominator }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Supported By: {{ profile.Supporter }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Country: {{ profile.Country }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Date Joined: {{ profile.DateJoined }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Gender: {{ profile.Gender }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        ISB Graduate: {{ profile.ISB }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        In Service: {{ profile.InService }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        Remarks: {{ profile.Remarks }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-item-divider class="transparent-item">
+  </ion-item-divider>
+  <ion-card>
+    <ion-card-header class="has-border">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/imgs/earning.png">
+        </ion-avatar>
+        <ion-label text-wrap>
+          <h2 class="default-text">Earnings</h2>
+          <p class="default-text">{{ paymentYear() }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-list lines="none">
+      <ion-item class="transparent-item">
+        USD 52,400: {{ profile.LEarnings }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        USD 72,000: {{ profile.MEarnings }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        USD 96,000: {{ profile.HEarnings }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-item-divider class="transparent-item">
+  </ion-item-divider>
+  <ion-card *ngIf="voter">
+    <ion-card-header class="has-border">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/imgs/rate.png">
+        </ion-avatar>
+        <h2 class="default-text">Rating</h2>
+        <p class="default-text">1 - Lowest, 10 - Highest</p>
+      </ion-item>
+    </ion-card-header>
+    <ion-item>
+      <ion-badge item-end>{{ rating }}</ion-badge>
+    </ion-item>
+    <div *ngIf="canVote">
+      <ion-item>
+        <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="rating">
+        </ion-range>
+      </ion-item>
+      <ion-button expand="block" (click)="beforeSaving()">
+        Submit
+      </ion-button>
+    </div>
+    <ion-item *ngIf="!canVote">
+      <ion-range min="1" max="10" step="1" snaps="true" disabled [(ngModel)]="rating">
+      </ion-range>
+    </ion-item>
+  </ion-card>
+</ion-content>
+<app-footer-tab></app-footer-tab>

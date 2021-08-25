@@ -1,0 +1,249 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Nomination Profile </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img [src]="profile.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)" style="height: 56vh; object-fit: cover; object-position: 0 20%;">
+    <ion-card-header>
+      <ion-item style="text-align: center;">
+        <ion-label text-wrap>
+          <h2 class="default-text">{{ profile.Name }}</h2>
+          <p class="default-text">{{ profile.IRID }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <div style="background: #0d2c6c;margin-bottom: 5px;" (click)="informationToggle = !informationToggle">
+      <ion-item class="item-headers">
+        <p style="color: white;">Information </p>
+        <ion-icon style="color: white; font-size: 24px;" slot="end"
+          [name]="informationToggle ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+        <!-- <ion-button horizontal="end">Save Changes</ion-button> -->
+      </ion-item>
+    </div>
+    <ion-list lines="none" *ngIf="informationToggle">
+      <ion-item class="transparent-item">
+        <strong>Gender: </strong>&nbsp;&nbsp;{{ profile.Gender }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Team: </strong>&nbsp;&nbsp;{{ profile.Team }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>COV Member: </strong>&nbsp;&nbsp;{{ profile.COVMember }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Nominated By: </strong>&nbsp;&nbsp;{{ profile.Nominator }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Supported By: </strong>&nbsp;&nbsp;{{ profile.Supporter }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>ISB Graduate: </strong>&nbsp;&nbsp;{{ profile.ISB }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>In Service: </strong>&nbsp;&nbsp;{{ profile.InService }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Country: </strong>&nbsp;&nbsp;{{ profile.Country }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Date Joined: </strong>&nbsp;&nbsp;{{ profile.DateJoined }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Rank: </strong>&nbsp;&nbsp;{{ profile.rank }}
+      </ion-item>
+      <ion-item class="transparent-item" *ngIf="profile.Title ==='AVP'">
+        <strong>Year as VC: </strong>&nbsp;&nbsp;{{ profile.YearVC }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>Remarks: </strong>&nbsp;&nbsp;{{ profile.Remarks }}
+      </ion-item>
+    </ion-list>
+    <div style="background: #0d2c6c; margin-bottom: 5px;" (click)="earningsToggle = !earningsToggle">
+      <ion-item class="item-headers">
+        <p style="color: white;">Earnings </p>
+        <ion-icon style="color: white; font-size: 24px;" slot="end"
+          [name]="earningsToggle ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+        <!-- <ion-button horizontal="end">Save Changes</ion-button> -->
+      </ion-item>
+    </div>
+    <ion-list lines="none" *ngIf="earningsToggle">
+      <ion-item class="transparent-item">
+       {{paymentYear()}}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>USD 52,400:</strong>&nbsp;&nbsp;{{ profile.LEarnings }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>USD 72,000:</strong>&nbsp;&nbsp;{{ profile.MEarnings }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <strong>USD 96,000:</strong>&nbsp;&nbsp;{{ profile.HEarnings }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <!-- <ion-card>
+    
+  </ion-card> -->
+  <ion-card *ngIf="voter">
+  
+      <ion-item style="text-align: center;">
+        <ion-label text-wrap>
+          <h2 class="default-text">Ratings</h2>
+          <p class="default-text">1 - Lowest, 10 - Highest</p>
+        </ion-label>
+      </ion-item>
+
+    <div style="color: rgba(0,0,0,0.5); text-align: center; font-size: 50px; font-weight: bold;">
+      {{rating}}/10
+    </div>
+    <div class="star-rating" *ngIf="canVote">
+      <div *ngIf="rating==1">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==2">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+    
+      <div *ngIf="rating==3">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==4">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==5">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==6">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==7">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==8">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==9">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star-outline" (click)="onRate(10)"></ion-icon>
+      </div>
+      <div *ngIf="rating==10">
+        <ion-icon name="star" (click)="onRate(1)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(2)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(3)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(4)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(5)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(6)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(7)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(8)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(9)"></ion-icon>
+        <ion-icon name="star" (click)="onRate(10)"></ion-icon>
+      </div>
+    </div>
+    <ion-button expand="block" (click)="beforeSaving()"  *ngIf="canVote">
+      Submit
+    </ion-button>
+    <!-- <ion-item *ngIf="!canVote">
+      <ion-range min="1" max="10" step="1" snaps="true" disabled [(ngModel)]="rating">
+      </ion-range>
+    </ion-item> -->
+  </ion-card>
+</ion-content>
+<app-footer-tab></app-footer-tab>

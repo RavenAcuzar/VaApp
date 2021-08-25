@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="lower-toolbar" [routerLink]="['/home']" routerDirection="back">
+    &nbsp; &nbsp; < Directory </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="height: 72; background: #D9E7F3; margin-right: 0px;
+  margin-left: 0px;" class="" *ngFor="let partner of topTable; let i = index;">
+    <ion-row>
+      <ion-col size="5" class="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 50px;">
+        <img [src]="partner.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)" style="width:100px;" />
+      </ion-col>
+      <ion-col>
+        <ion-card-header>
+          <ion-card-title>{{partner.Name}}</ion-card-title>
+          <ion-card-subtitle style="margin-top: 0px;">{{partner.CompanyTitle}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-segment [(ngModel)]="type" color="primary" mode='md' (ionChange)="changeView()">
+    <ion-segment-button value="GBD">
+      GBD
+    </ion-segment-button>
+    <ion-segment-button value="GLAD">
+      GLAD
+    </ion-segment-button>
+    <ion-segment-button value="NSE">
+      SAS
+    </ion-segment-button>
+
+  </ion-segment>
+
+  <div>
+
+    <ion-card style="height: 72; background: #D9E7F3; margin-right: 0px;
+margin-left: 0px;" class="" *ngFor="let partner of viewTable; let i = index;">
+      <ion-row>
+        <ion-col size="5" class=""
+          style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 50px;">
+          <img [src]="partner.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)" style="width:100px;" />
+        </ion-col>
+        <ion-col>
+          <ion-card-header>
+            <ion-card-title>{{partner.Name}}</ion-card-title>
+            <ion-card-subtitle style="margin-top: 0px;">{{partner.CompanyTitle}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>
+<app-footer-tab></app-footer-tab>

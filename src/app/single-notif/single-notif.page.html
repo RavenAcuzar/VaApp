@@ -1,0 +1,24 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="data.ImageLink">
+    <ion-card-header>
+      <ion-card-title>{{ data.localTitle }}</ion-card-title>
+      <ion-card-subtitle><p><ion-icon name="eye"></ion-icon> Hits: {{ data.Hits }} | {{ data.CreatedOnDate }}</p></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="data-description">
+        <div [innerHTML]="data.description"></div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<app-footer-tab></app-footer-tab>

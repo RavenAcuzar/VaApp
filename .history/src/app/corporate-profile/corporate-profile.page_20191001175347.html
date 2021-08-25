@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ profile.Name }}</ion-title>
+    <ion-buttons *ngIf="isSuperuser" slot="end">
+      <ion-button style="background: transparent !important" (click)="edit()">
+        Edit
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-card>
+      <ion-item class="transparent-item">
+        <ion-avatar item-start>
+          <img [src]="profile.Image" (error)="Defaults_.PERSON_REVERT_TO_DEFAULT($event)">
+        </ion-avatar>
+        <p style="padding-left: 12px !important"> {{ profile.CompanyTitle }}</p>
+      </ion-item>
+      <ion-item class="transparent-item">
+        <b style="padding-right: 3px !important">Email: </b> {{ profile.Email }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <b style="padding-right: 3px !important">Contact Number: </b> {{ profile.ContactNumber }}
+      </ion-item>
+      <ion-item class="transparent-item">
+        <b style="padding-right: 3px !important">Region: </b> {{ profile.Region }}
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

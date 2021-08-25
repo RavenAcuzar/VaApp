@@ -1,0 +1,22 @@
+<ion-tabs style="position: relative !important; height: 80px;">
+  <ion-toolbar>
+
+    <ion-row>
+      <ion-col style="padding:0px;">
+        <img style="width:100%" src="assets/imgs/divider.png">
+      </ion-col>
+    </ion-row>
+    <ion-tab-bar>
+
+      <ion-tab-button *ngFor="let p of tabPages" (click)=openPage(p.component)>
+        <ion-icon name={{p.icon}}></ion-icon>
+        <ion-label>{{p.title}}</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <ion-menu-button></ion-menu-button>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-toolbar>
+</ion-tabs>

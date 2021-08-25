@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">vaservice.the-v.net</domain>
+        <domain includeSubdomains="true">site.the-v.net</domain>
+        <domain includeSubdomains="true">the-v.net</domain>
+        <domain includeSubdomains="true">players.brightcove.net</domain>
+
+        <domain includeSubdomains="true">brightcove04pmdo-a.akamaihd.net</domain>
+        <domain includeSubdomains="true">brightcove04.o.brightcove.com</domain>
+
+<!-- the-v.net -->
+        <!-- "http://site.the-v.net/images/default-source/va/staff/reejoie.jpg" -->
+    </domain-config>
+</network-security-config>

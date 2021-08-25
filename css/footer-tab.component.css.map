@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/footer-tab/footer-tab.component.scss"
+    ],
+    "names": [],
+    "file": "footer-tab.component.css"
+}

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end [routerLink]="['/search-page']" routerDirection='forward'>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+                V Ambassadors
+              </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start">
+      <p class="default-text"> &nbsp; &nbsp; < Travel Request </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let req of requestList; let i = index" style="border-radius: 10px !important;">
+    <ion-button fill="clear" horizontal="end">
+      <ion-icon slot="end" name="close"></ion-icon>
+    </ion-button>
+    <ion-item>
+      <ion-label position="floating">{{i+1}}. Destination</ion-label>
+      <ion-input required type="text" autofocus [(ngModel)]="req.Destination"></ion-input>
+    </ion-item>
+    <!-- <ion-item> -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">From</ion-label>
+          <ion-input required type="date" [(ngModel)]="req.StartDate"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">To</ion-label>
+          <ion-input required type="date" [(ngModel)]="req.EndDate" [min]="req.StartDate"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- </ion-item> -->
+    <!-- <ion-item>
+     
+    </ion-item> -->
+    <ion-item>
+      <ion-label position="floating">Purpose</ion-label>
+      <ion-input required type="text" [(ngModel)]="req.Purpose"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Remarks</ion-label>
+      <ion-input type="text" [(ngModel)]="req.Remarks"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="requestList.length > 1 && i != 0">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button expand="block" (click)="removeRequest(i)">Remove Request
+        </ion-button>
+      </ion-col>
+    </ion-item>
+
+  </ion-card>
+  <div>
+    <ion-button expand="block" (click)="addRequest()">Add Destination</ion-button>
+
+    <ion-button expand="block" (click)="beforeSaving()">
+      Create Request
+    </ion-button>
+
+    <ion-button expand="block" (click)="goToHistory()">Travel History</ion-button>
+  </div>
+</ion-content>
+<app-footer-tab></app-footer-tab>

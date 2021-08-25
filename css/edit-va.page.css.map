@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/edit-va/edit-va.page.scss"
+    ],
+    "names": [],
+    "file": "edit-va.page.css"
+}

@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar class="upper-toolbar">
+    <ion-buttons end>
+      <img style="padding-left: 20px;" src="assets/imgs/search.png">
+    </ion-buttons>
+    <!-- <ion-title>
+              V Ambassadors
+            </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar class="  ">
+
+    <ion-back-button slot="start" *ngIf="isFounder">
+      <p class="default-text"> &nbsp; &nbsp; < V Founders </p>
+          <!-- <p class="default-text" *ngIf="isAssociatePartner"> &nbsp; &nbsp; < Associate V Partners </p>
+              <p class="default-text" *ngIf="isPartner"> &nbsp; &nbsp; < V Partners </p>
+                  <p class="default-text" *ngIf="isCouncil"> &nbsp; &nbsp; < V Council </p> -->
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isPartner">
+      <p class="default-text"> &nbsp; &nbsp; < V Partners </p>
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isAssociatePartner">
+      <p class="default-text"> &nbsp; &nbsp; < Associate V Partners </p>
+    </ion-back-button>
+
+    <ion-back-button slot="start" *ngIf="isCouncil">
+      <p class="default-text"> &nbsp; &nbsp; < V Council </p>
+    </ion-back-button>
+
+    <!-- <div *ngIf="isFounder">
+      <p class="default-text"> &nbsp; &nbsp; < V Founders </p>
+    </div>
+    <div *ngIf="isPartner">
+      <p class="default-text"> &nbsp; &nbsp; < V Partners </p>
+    </div>
+    <div *ngIf="isAssociatePartner">
+      <p style="font-weight: 600" class="default-text"> &nbsp; &nbsp;< Associate V Partners </p>
+    </div>
+    <div *ngIf="isCouncil">
+      <p class="default-text"> V Council</p>
+    </div> -->
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="gradient-background">
+  <ion-card style="background: #E3E5E6;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+    <ion-img [src]="ambassador.Image" (error)="this.src='../../assets/profile.png'" style="margin:auto; width: 100%;"></ion-img>
+    <ion-card-header *ngIf="isPartner">
+      <ion-card-title>{{ambassador.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="isPartner">
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Title:
+        {{ambassador.position}}</p>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> IRID:
+        {{ambassador.irid}}</p>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Email:
+        {{ambassador.email}}</p>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Contact
+        Number: {{ambassador.contactnum}}</p>
+    </ion-card-content>
+  </ion-card>
+  <!-- <img [src]="assets/imgs/profile-photos-dato"> -->
+
+
+
+
+  <div *ngIf="isFounder">
+    <ion-card style="background: #E3E5E6;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+      <!-- <img [src]="ambassador.Image" style="margin:auto; width: 100%;"> -->
+      <ion-card-header>
+        <ion-card-title>{{ambassador.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;">
+          Title:
+          {{ambassador.position}}</p>
+      </ion-card-content>
+    </ion-card>
+    <div [innerHtml]="ambassador.NewDescription"></div>
+  </div>
+
+  <div *ngIf="isPartner">
+    <div [innerHtml]="ambassador.NewDescription"></div>
+  </div>
+
+  <div *ngIf="isAssociatePartner || isCouncil">
+    <div>
+      <p style="padding-left: 50px; font-weight: 700; font-size: 20px" class="default-text"> {{ambassador.name}}</p>
+    </div>
+    <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Title:
+        {{ambassador.position}}
+      </p>
+    </div>
+    <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Team:
+        {{ambassador.team}}
+      </p>
+    </div>
+    <!-- <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Based
+        Country:</p>
+    </div>
+    <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Year of
+        Joined:</p>
+    </div> -->
+    <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Email:
+        {{ambassador.email}}
+      </p>
+    </div>
+    <div>
+      <p class="default-text" style="padding-left: 50px; margin-top: 0px;margin-bottom: 0px; font-weight: 700;"> Contact
+        Number: {{ambassador.contactnum}}</p>
+    </div>
+
+  </div>
+
+  <!-- <div *ngIf="isCouncil">
+  <p class="brighter-text"> Is Council</p> -->
+  <!-- put ui for council here if needed -->
+  <!-- </div> -->
+
+</ion-content>
+<app-footer-tab></app-footer-tab>
